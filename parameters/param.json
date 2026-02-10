@@ -1,8 +1,16 @@
 [
 	{
 	  "relative_path":"blob/main/data/comments_js_1_part_2.json",
-	  "folder_destination":"bronze",
+	  "container_name":"bronze",
+	  "folder_destination":"comments",
 	  "file_destination":"comments" 
+	},
+	{
+	  "relative_path":"RealState/refs/heads/main/data/posts_js_1_part_1.json",
+	  "container_name":"bronze",
+	  "folder_destination":"posts",
+	  "file_destination":"posts" 
 	}
 ]
+
 
