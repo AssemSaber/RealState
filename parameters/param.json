@@ -1,0 +1,7 @@
+[
+	{
+	  'relative_path':'blob/main/data/comments_chunk_1.parquet'
+	  'folder_destination':'bronze'
+	  'file_destination':'comments' 
+	}
+]
