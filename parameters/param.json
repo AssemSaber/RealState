@@ -6,12 +6,13 @@
 	  "file_destination":"comments" 
 	},
 	{
-	  "relative_path":"/RealState/refs/heads/main/data/comments_js_1_part_1.json",
+	  "relative_path":"/RealState/refs/heads/main/data/posts_js_1_part_1.json",
 	  "container_name":"bronze",
 	  "folder_destination":"posts",
 	  "file_destination":"posts" 
 	}
 ]
+
 
 
 
