@@ -1,7 +1,8 @@
 [
 	{
-	  'relative_path':'blob/main/data/comments_chunk_1.parquet'
-	  'folder_destination':'bronze'
-	  'file_destination':'comments' 
+	  "relative_path":"blob/main/data/comments_js_1_part_2.json",
+	  "folder_destination":"bronze",
+	  "file_destination":"comments" 
 	}
 ]
+
