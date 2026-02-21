@@ -1,9 +1,0 @@
-{
-	"name": "adf00realstate",
-	"location": "westeurope",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "3e00a651-49ee-41e0-bd67-7363409a76e2",
-		"tenantId": "aadc0e0a-65ee-471a-99a1-9f86faecbaed"
-	}
-}
