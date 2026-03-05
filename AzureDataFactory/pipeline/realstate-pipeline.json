@@ -33,7 +33,7 @@
 				}
 			},
 			{
-				"name": "ForEach1",
+				"name": "copyDataSources",
 				"type": "ForEach",
 				"dependsOn": [
 					{
@@ -126,7 +126,7 @@
 				"type": "DatabricksJob",
 				"dependsOn": [
 					{
-						"activity": "ForEach1",
+						"activity": "copyDataSources",
 						"dependencyConditions": [
 							"Succeeded"
 						]
