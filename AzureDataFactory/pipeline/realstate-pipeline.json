@@ -122,7 +122,7 @@
 				}
 			},
 			{
-				"name": "realstate-job",
+				"name": "RealState-DBX-job",
 				"type": "DatabricksJob",
 				"dependsOn": [
 					{
@@ -144,7 +144,7 @@
 					"jobId": "451126635870620"
 				},
 				"linkedServiceName": {
-					"referenceName": "linkedDBX",
+					"referenceName": "linked00dff00Databricks",
 					"type": "LinkedServiceReference"
 				}
 			}
