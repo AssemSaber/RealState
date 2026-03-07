@@ -26,7 +26,7 @@
   - **Mechanism**: Ingested via Azure Cosmos DB **Change Feed** (CDC).
   - **Engineering Detail**: This stream captures high-velocity, unstructured Arabic text. It is the primary trigger for the Real-Time AI Routing logic, allowing the system to react to customer
   - **Real-Time AI Inference (NLP)**:The system applies a specialized **Arabic-BERT model** to every incoming event to extract intent and sentiment, where Automatically categorizing messages as **`"Urgent Complaint,"`** or **`"Sales Lead."`**
-  - **Data Enrichment**: A raw stream is often **missing the context needed for a team** to take action, so this layer performs a Streaming-to-Static Join to "hydrate" the event with critical metadata: Phone client, City, District, price, area, and comment or complaint
+  - **Data Enrichment**: A raw stream is often **missing the context needed for a team** to take action, so this layer performs a Streaming-to-Static Join to "hydrate" the event with critical metadata: `Phone client, City, District, price, area, and "comment or complaint"`
 
 ## Sales Team
 ![System Architecture photo](images/sales.jpeg)
