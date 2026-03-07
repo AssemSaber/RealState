@@ -9,7 +9,7 @@
   -  **`Conversational AI Discovery`** Powering an Intelligent **`Chatbot Interface (GPT-style) `** that allows users to interact with the real estate market through natural dialogue.
 ----
 ## **The Business Problem**
- Real estate platforms handle massive volumes of unstructured data, often leading to two critical failures:
+ Real estate platforms handle massive volumes of unstructured and structured data, often leading to three critical failures:
   -  **Response Latency**: Urgent customer grievances are lost in batch processing cycles, damaging brand reputation.
   -  **Missed Revenue**: High-intent sales inquiries are treated as static comments rather than live leads, leading to lost conversion opportunities.
   -  **Search Friction & Information Overload (The Chatbot Problem):** Traditional real estate platforms rely on `Static Filtering` (Price, SQM, Location).
