@@ -70,8 +70,8 @@
 
 **${\textsf{\color{green}Solution}}$:** Introducing `micro-layers` inside each layer to isolate responsibilities, improve modularity, and simplify maintenance.
 
-**${\textsf{\color{red}Challenges in Spark}}$:**
-  - The transformation took  ${\textsf{\color{red}25 minute}}$ and with the last transformation occured ${\textsf{\color{red}out of memory}}$
+### **${\textsf{\color{red}Challenges in Spark}}$:**
+  - The transformation took  **${\textsf{\color{red}25 minute}}$** and with the last transformation occured **${\textsf{\color{red}out of memory}}$**
 
     **${\textsf{\color{red}Challenge}}$:**
     - we avoided the `SortMergeJoin` by using a `BroadcastHashJoin`
@@ -88,5 +88,8 @@
     **${\textsf{\color{green}Solution}}$:**
        - The best practice was to perform a `single repartition` in the main code, then `cache the DataFrame`. Also, there was `no need to sort` the data before aggregation because Spark used a `HashAggregate`
       - ![System Architecture photo](images/cache.png)
-  ----
+        
+    **Finally, we got**
+    - ![System Architecture photo](images/spark_optimization_2.jpeg)
+  
   
