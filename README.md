@@ -33,6 +33,7 @@
 ----
 ## **B. Batch Ingestion (Structured)**
 - [Data Dictionary:](https://www.kaggle.com/datasets/mohdph/saudi-arabia-real-estate-dataset)
+- First of all, we started with `Exploratory Data Analysis (EDA)`
 - **Multi-Stage Ingestion** `(Bronze Layer)`
   - **Source:** External REST API
   - **Mechanism:** Scheduled Batch Ingestion via Azure Data Factory (ADF)
@@ -69,7 +70,23 @@
 
 **${\textsf{\color{green}Solution}}$:** Introducing `micro-layers` inside each layer to isolate responsibilities, improve modularity, and simplify maintenance.
 
-**${\textsf{\color{red}Challenge in Spark}}$:**
+**${\textsf{\color{red}Challenges in Spark}}$:**
   - The transformation took  ${\textsf{\color{red}25 minute}}$ and with the last transformation occured ${\textsf{\color{red}out of memory}}$
 
+    **${\textsf{\color{red}Challenge}}$:**
+    - we avoided the `SortMergeJoin` by using a `BroadcastHashJoin`
+        - ![System Architecture photo](images/merge.png)
+        
+    **${\textsf{\color{green}Solution}}$:**
+      - ![System Architecture photo](images/broadcast.png)
 
+    **${\textsf{\color{red}Challenge}}$:**
+    -  Excessive `repartitioning` occurred across the cluster and within `partitions` because it was called inside the function. The intention was to sort the data at the partition level to make the `groupBy operation easier and more efficient`
+    
+    - ![System Architecture photo](images/repartition.png)
+      
+    **${\textsf{\color{green}Solution}}$:**
+       - The best practice was to perform a `single repartition` in the main code, then `cache the DataFrame`. Also, there was `no need to sort` the data before aggregation because Spark used a `HashAggregate`
+      - ![System Architecture photo](images/cache.png)
+  ----
+  
