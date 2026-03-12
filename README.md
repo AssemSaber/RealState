@@ -71,7 +71,7 @@
 ### We use Table Format: 
   - **Using Delta Lake to support ACID transactions, data auditing, schema evolution, schema enforcement, and table versioning.**
     
-
+<a name="challenges-overcome-engineering"></a>
 ## ${\textsf{\color{blue} Challenges Overcome Engineering}}$
 
 **${\textsf{\color{red}Challenge}}$:** Full Load Across All Layers
@@ -93,6 +93,7 @@
 
 **${\textsf{\color{green}Solution}}$:** Configure Azure Data Factory to write the data `partitioned by` `year`, `month`, and `day`, allowing Spark to prune unnecessary partitions during reads
 
+<a name="challenges-in-spark"></a>
 ### **${\textsf{\color{red}Challenges in Spark}}$:**
   - The transformation took  **${\textsf{\color{red}25 minute}}$** and with the last transformation occured **${\textsf{\color{red}out of memory}}$**
 
