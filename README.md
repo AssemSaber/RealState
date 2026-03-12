@@ -17,6 +17,25 @@
 ## **Architecture Overview**
 ![System Architecture photo](images/architecture_realstate.gif)
 -------
+# Table of Contents
+
+### Core Architecture
+- [Project Overview](#project-overview)
+- [The Business Problem](#the-business-problem)
+- [Architecture Diagram](#architecture-overview)
+
+### Data Engineering
+- [Real-Time Interaction Stream](#a-real-time-interaction-stream-unstructured)
+- [Batch Ingestion & Medallion Layers](#b-batch-ingestion-structured)
+- [Engineering Challenges & Solutions](#challenges-overcome-engineering)
+- [Spark Performance Optimization](#challenges-in-spark)
+- [Successful Full Pipeline Execution](#successful-full-pipeline-execution)
+
+### Delivery & Insights
+- [Power BI Dashboards](#power-bi-dashboards)
+- [AI Chatbot Integration](#chatbot-interface)
+- [Full Tech Stack](#tech-stack)
+
 
 ## **A. Real-Time Interaction Stream (Unstructured)**
 #### This layer serves as the "Brain" of the real-time pipeline, utilizing Apache Spark Structured Streaming and Spark MLlib to perform high-speed inference and multi-dimensional data enrichment.
@@ -70,6 +89,10 @@
 
 **${\textsf{\color{green}Solution}}$:** Introducing `micro-layers` inside each layer to isolate responsibilities, improve modularity, and simplify maintenance.
 
+**${\textsf{\color{red}Challenge}}$:**  Spark usually reads all data in the Bronze layer
+
+**${\textsf{\color{green}Solution}}$:** Configure Azure Data Factory to write the data `partitioned by` `year`, `month`, and `day`, allowing Spark to prune unnecessary partitions during reads
+
 ### **${\textsf{\color{red}Challenges in Spark}}$:**
   - The transformation took  **${\textsf{\color{red}25 minute}}$** and with the last transformation occured **${\textsf{\color{red}out of memory}}$**
 
@@ -91,5 +114,39 @@
         
     **Finally, we got**
     - ![System Architecture photo](images/spark_optimization_2.jpeg)
-  
-  
+----
+
+### Successful Full Pipeline Execution 
+
+   - ![System Architecture photo](images/successul_run.jpeg)
+    
+   - ![System Architecture photo](images/DBX_flow.jpeg)
+
+----
+## Data Consumption
+   - ### Power BI dashboards
+      
+   - ### Chatbot interface 
+
+----
+### Tech Stack
+
+**Data Orchestration & Ingestion**
+  - **Azure Data Factory (ADF):** Orchestrates complex ETL workflows, managing batch ingestion from REST APIs.
+  - **Azure Cosmos DB (Change Feed):** Acts as the low-latency entry point for streaming events, capturing live comments and complaints.
+    
+**Distributed Processing & AI**
+  - **Azure Databricks (PySpark):** The core engine for distributed data transformation and Medallion layer management.
+  - **Spark MLlib:** Powers the real-time inference engine using BERT-based models to classify sentiment and intent from incoming text.
+    
+**Storage & Unified Data Layer**
+  - **Azure Data Lake Storage (ADLS Gen2):** Scalable, hierarchical storage for raw and processed assets.
+  - **Delta Lake:** Provides ACID transactions, schema enforcement, and Time Travel capabilities across the Bronze, Silver, and Gold layers.
+
+**Security & Governance**
+  - **Azure Key Vault:** Centralized management of service principals, connection strings, and API secrets.
+    
+**Analytics & Delivery**
+  - **Power BI:** Dimensional modeling (Star Schema) for executive-level market reporting.
+  - **Telegram Bot Integration:** Event-driven alerting system that routes urgent maintenance tickets and sales leads instantly.
+
