@@ -1,7 +1,7 @@
 # **Project Overview**
-  ### **This project demonstrates a modern data engineering architecture designed to process real estate market data using `a Hybrid Lambda-style approach (Real-time Streaming & Batch Pipelines)`. The system focuses on enriching raw data with Machine Learning to deliver high-priority insights to business stakeholders.**
-  ### **Leveraging a `Lakehouse Architecture (Delta Lake)`, the system follows the `Bronze–Silver–Gold` pattern to ensure data reliability, ACID transactions, and schema enforcement**
-  ### **The processed data is activated to:**
+   **This project demonstrates a modern data engineering architecture designed to process real estate market data using `a Hybrid Lambda-style approach (Real-time Streaming & Batch Pipelines)`. The system focuses on enriching raw data with Machine Learning to deliver high-priority insights to business stakeholders.**
+   **Leveraging a `Lakehouse Architecture (Delta Lake)`, the system follows the `Bronze–Silver–Gold` pattern to ensure data reliability, ACID transactions, and schema enforcement**
+   **The processed data is activated to:**
   -  **`Trigger Real-Time AI Alerts:`** 
      -   **`Urgent Support Path`** : If the AI identifies a **`"Complaint" or "Maintenance Issue"`** the record triggers an immediate high-priority alert to the **Urgent Support Team via the Telegram** Bot API.
      -   **`Sales Lead Path`** : If the AI identifies a **`"Question" or "Pricing Inquiry"`**, the data is enriched with property details and routed to the **Sales Team Telegram** Bot API.
@@ -34,6 +34,7 @@
 ### Delivery & Insights
 - [Power BI Dashboards](#power-bi-dashboards)
 - [AI Chatbot Integration](#chatbot-interface)
+- [Video Demo](#video-demo)
 - [Full Tech Stack](#tech-stack)
 
 
@@ -126,9 +127,22 @@
 ----
 ## Data Consumption
    - ### Power BI dashboards
-      
-   - ### Chatbot interface 
+      - ![System Architecture photo](images/screen_1.png)
+      - ![System Architecture photo](images/screen_2.png)
+      - ![System Architecture photo](images/screen_3.png)
+      - ![System Architecture photo](images/screen_4.png)
+   - ### Chatbot  
+      Features
+        - Multi-language support (Arabic and English)
+        - Conversational preference gathering (Buy vs Rent, City, Property Type, Budget)
+        - Real-time property search using CSV data
+        - Property detail retrieval and filter refinement suggestions
+        - Integration with Azure OpenAI and LangGraph
 
+----
+## Video Demo 
+- [**Watch the Demo!**](https://drive.google.com/file/d/15V5Mfz55CDbDGTdL61Z16O9k_ujh9-dS/view?usp=sharing)
+  
 ----
 ### Tech Stack
 
